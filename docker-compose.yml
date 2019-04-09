@@ -1,0 +1,9 @@
+version: '3'
+services:
+        url-shortener:
+                build:
+                        context: .
+                        dockerfile: ./Dockerfile-backend
+                ports:
+                        - "9999:9999"
+                network_mode: "host"
