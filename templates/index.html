@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acortador URL</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
+  <link href="{{ url_for('static', filename='css/css.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+  <link href="{{ url_for('static', filename='css/component.css') }}" rel="stylesheet" type="text/css"> 
+</head>
+<body >
+<section class="rectangulo"><p class="titulo">Acortador de URL</p></section>
+     <form method="post" class="style-1" action="">
+     <div class="sAcortar">
+     <span>
+     <label>URL largo:</label><br>
+      <input type="text" name="URLLargo" id="URLLargo"> 
+      <p></p> <br>
+      <label>URL acortada:</label><br>
+      <label style="margin-left: -140px;" class="small">{{host}}</label>
+      <input type="text" name="URLCorto" id="URLCorto"> 
+      </span>    
+     </div>
+      <p></p>
+     <div>
+      <center><br><button class="btn btn-1 btn-1b boton" type="submit">Cortar</button></center>
+     </div>
+      </form>
+      {% if yaUsado %}
+        <p style="color: red">{{yaUsado}}</p>
+      {% endif %}
+  {% if not urlCorto %}
+  {% else %}
+  <center>
+  <p></p>
+    <div>
+      <label>Tu URL personalizada es: <a href= "{{urlCorto}}" target="_blank"> {{urlCorto}}</a></label>
+    </div>
+  </center>
+  {% endif %}
+  <footer class="pie"> 
+  <a href="https://www.github.com/maiosource/AcortadorURL" >https://www.github.com/maiosource/AcortadorURL</a>
+  <p></p>
+  <p></p>
+  </footer>
+</body>
+</html>
