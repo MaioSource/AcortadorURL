@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from app import db, Url
+from app import Url
 #Si existe la urlCorta en la BD devuelve False
 #Si NO existe la urlCorta en la BD devuelve True
 def noExiste(urlCorta):

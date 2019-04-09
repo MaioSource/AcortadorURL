@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from flask import request, redirect, render_template, Flask
-import existeUrl
 import os
 import string
 
@@ -8,17 +7,20 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-host="http://localhost:5000/" #por ejemplo http://www.small.cf
+host="https://agustinmaio.cf/" 
 app.secret_key=os.urandom(24)
 app.config.from_pyfile('config.cfg')
 
 db = SQLAlchemy(app)
 
+
 class Url(db.Model):
         id = db.Column(db.Integer, primary_key=True)
-	UrlLarga = db.Column(db.String(512))
+        UrlLarga = db.Column(db.String(512))
         UrlCorta = db.Column(db.String(512))
 db.create_all()
+
+import existeUrl
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
@@ -51,4 +53,4 @@ def redireccionar(urlCorta):
 
 
 if __name__ == '__main__':
-        app.run()
+        app.run(app, host='0.0.0.0')
