@@ -1,108 +1,211 @@
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
 body {
- 	background-color: white;
-	background-size: cover;
-	height: 100%;
-	background-repeat: no-repeat;
-	text-align: left;
+  width: 100%;
+  height: 100%;
+	margin: 0;
+	font-family: 'Helvetica';
+  background-image: url("../img/bg.png");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.rectangulo
-{
-	width:100%; 
-	height: 80px;
-	background-color: lightblue; 
-}
-.titulo
-{
-	font-family: 'Nunito', sans-serif;
-	text-align: center;
-	font-size: 50px;
-	color: grey;
-}
-.sAcortar
-{
-	font-family: 'Nunito', sans-serif;
-	text-align: center;
-}
-.Acortado
-{
-	font-family: 'Nunito', sans-serif;
-	text-align: center;
-}
-label {
-	font-size: 2.5em;
-	color: grey;
+html {
+  width: 100%;
+  height: 100%;
 }
 
-input {
-	font-size: 2em;
-}
-.color{
-	color: grey;
-	font-size: 3em;
+.container {
+  margin: 0 auto;
 }
 
-.style-1 input[type="text"] 
-{
-  padding: 0.1px;
-  border: solid 1px #dcdcdc;
-  transition: box-shadow 0.3s, border 0.3s;
-  background-color: transparent;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: cornflowerblue;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: black;
+}
+
+.barra{
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: white;
+  display: none !important;
+}
+
+.long-url{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width:400px;
+    margin-left:-200px;
+    height:300px;
+    margin-top:-150px;
+    padding:5px;
+}
+
+.texto{
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#URLLargo{
+  width: 98%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding-left: 5px;
+  height: 30px;
+}
+#URLCorto{
+  display: block;
+  padding: 1px 1px 1px 161px;
+  width: 59%;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  height: 30px;
+}
+
+.input-box { 
+  position: relative; 
+}
+.unit { 
+  position: absolute; 
+  display: block; 
+  left: 5px; 
+  top: 8px; 
+  z-index: 9; 
+}
+
+.if-elements{
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+.button{
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: white;
+  height: 30px;
+  width: 70px;
   color: black;
-  font-size: 3em;
-}
-.style-1 input[type="text"]:focus,
-.style-1 input[type="text"].focus {
-  border: solid 1px #707070;
-  box-shadow: 0 0 5px 1px #969696;
 }
 
-.boton
-{
-	color:black;
-	background-color: black;
+
+@-moz-document url-prefix() {
+  #URLCorto {
+    width: 53%;
+    padding: 1px 1px 1px 184px;
+  }
 }
-.pie
-{
-	text-align: center;
-	font-size:30px;
-	color: grey;
-	font-family: 'Nunito', sans-serif;
-	display: block;
-	position: absolute;
-  	bottom: 0;
-	background-color: lightblue;
-	width: 100%;
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+  //CSS
+  
 }
-@media (max-width:770px) {
-	.titulo{
-		padding-top: 20px;
-		font-family: 'Nunito', sans-serif;
-		text-align: center;
-		font-size: 30px;
-		color: grey;
-	}
-	.sAcortar
-	{
-		padding-top: 20px;
-		font-family: 'Nunito', sans-serif;
-		text-align: center;
-		font-size:5px;
-	}
-	.pie
-	{
-		text-align: center;
-		font-size:12px;
-		color: grey;
-		font-family: 'Nunito', sans-serif;
-		display: block;
-		position: absolute;
-	  	bottom: 0;
-	 	background-color: lightblue;
-		width: 100%;
-	}
-	.small
-	{
-		padding-left: 130px; 
-	}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  //CSS
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  //CSS
+  
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  
+  //CSS
+  
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+  //CSS
+  
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .barra{
+    display: block !important;
+  }
+  li a{
+    display: none;
+  }
 }

@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Acortador URL</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
-  <link href="{{ url_for('static', filename='css/css.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ url_for('static', filename='css/component.css') }}" rel="stylesheet" type="text/css"> 
+	<title>Acortador URL</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="static/css/css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+  	<link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}">
 </head>
-<body >
-<section class="rectangulo"><p class="titulo">Acortador de URL</p></section>
-     <form method="post" class="style-1" action="">
-     <div class="sAcortar">
-     <span>
-     <label>URL largo:</label><br>
-      <input type="text" name="URLLargo" id="URLLargo"> 
-      <p></p> <br>
-      <label>URL acortada:</label><br>
-      <label style="margin-left: -140px;" class="small">{{host}}</label>
-      <input type="text" name="URLCorto" id="URLCorto"> 
-      </span>    
-     </div>
-      <p></p>
-     <div>
-      <center><br><button class="btn btn-1 btn-1b boton" type="submit">Cortar</button></center>
-     </div>
-      </form>
-      {% if yaUsado %}
-        <p style="color: red">{{yaUsado}}</p>
-      {% endif %}
-  {% if not urlCorto %}
-  {% else %}
-  <center>
-  <p></p>
-    <div>
-      <label>Tu URL personalizada es: <a href= "{{urlCorto}}" target="_blank"> {{urlCorto}}</a></label>
-    </div>
-  </center>
-  {% endif %}
-  <footer class="pie"> 
-  <a href="https://www.github.com/maiosource/AcortadorURL" >https://www.github.com/maiosource/AcortadorURL</a>
-  <p></p>
-  <p></p>
-  </footer>
+<body>
+	<div class="conteiner col-12">
+		<nav>
+			<ul>
+				<li><i class="fas fa-bars barra"></i></li>
+				<li><a target="_blank" href="{{ source_code }}"><i class="fab fa-github"></i> Source Code</a></li>
+				<li><a target="_blank" href="{{ dev_info[0] }}">{{ dev_info[1] }}</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="content">
+		<form method="post" class="style-1" action="">
+			<div class="long-url">
+				<div class="content-long">
+					<label class="texto">URL largo:</label>
+					<br>
+					<input type="text" name="URLLargo" id="URLLargo" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" >
+				</div>
+			</div>
+			<div class="short-url">
+				<div class="content-short">
+					<label class="texto">URL acortada:</label>
+					<br>
+					<div class="input-box">
+					    <span class="unit">{{host}}</span>
+					    <input type="text" name="URLCorto" id="URLCorto" autofocus="autofocus" placeholder="video">
+					</div>
+				</div>
+			</div>
+			<div>
+		      	<center>
+		      		<br>
+		      		<button class="button" type="submit">Cortar</button>
+		      	</center>
+		    </div>
+		</form>
+	</div>
+	{% if yaUsado %}
+			<p class="if-elements" style="color: red">{{yaUsado}}</p>	
+    {% endif %}
+  	{% if not urlCorto %}
+  	{% else %}
+	  	<center>
+		  	<p></p>
+		    <div>
+		      	<p class="if-elements">Tu URL personalizada es: <a href= "{{urlCorto}}" target="_blank"> {{urlCorto}}</a></p>
+		    </div>
+	  	</center>
+  	{% endif %}
 </body>
 </html>
