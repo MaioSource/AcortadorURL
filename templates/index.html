@@ -7,16 +7,16 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
   	<link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}">
+  	<script type="text/javascript" src="static/js/script.js"></script>
 </head>
 <body>
-	<div class="conteiner col-12">
-		<nav>
-			<ul>
-				<li><i class="fas fa-bars barra"></i></li>
-				<li><a target="_blank" href="{{ source_code }}"><i class="fab fa-github"></i> Source Code</a></li>
-				<li><a target="_blank" href="{{ dev_info[0] }}">{{ dev_info[1] }}</a></li>
-			</ul>
-		</nav>
+	<div class="topnav" id="myTopnav">
+		<a href="{{host}}">Home</a>
+		<a href="{{ source_code }}">Source code</a>
+		<a href="{{ dev_info[0] }}">About</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		    <i class="fa fa-bars"></i>
+		</a>
 	</div>
 	<div id="content">
 		<form method="post" class="style-1" action="">
