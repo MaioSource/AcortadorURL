@@ -39,7 +39,7 @@ def home():
                         db.session.add(newUrl)
                         db.session.commit()
                 else:
-                        return render_template('index.html', host=host, yaUsado="URL personalizada ya se encuentra en uso.")
+                        return render_template('index.html', host=host, dev_info=dev_info, yaUsado="URL personalizada ya se encuentra en uso.")
                 return render_template('index.html', host=host, urlCorto=url_personalizada, dev_info=dev_info, source_code=source_code)
 
         return render_template('index.html', host=host, dev_info=dev_info, source_code=source_code)
@@ -55,4 +55,4 @@ def redireccionar(urlCorta):
 
 
 if __name__ == '__main__':
-        app.run(host='0.0.0.0')
+        app.run(host='192.168.0.5')

@@ -244,6 +244,12 @@ html {
     top: 6px; 
     font-size: 20px;
   }
+  @-moz-document url-prefix() {
+    #URLCorto {
+      width: 60%;
+      padding: 1px 1px 1px 233px;
+    }
+  }
 }
 @media only screen and (max-width: 610px){
   .topnav a{
@@ -284,6 +290,12 @@ html {
     top: 6px; 
     font-size: 20px;
   }
+  @-moz-document url-prefix() {
+    #URLCorto {
+      width: 52%;
+      padding: 1px 1px 1px 233px;
+    }
+  }
 }
 @media only screen and (max-width: 510px){
   
@@ -303,5 +315,11 @@ html {
   #URLCorto{
     padding: 1px 1px 1px 200px;
     width: 48.5%;
+  }
+  @-moz-document url-prefix() {
+    #URLCorto {
+      width: 41%;
+      padding: 1px 1px 1px 233px;
+    }
   }
 }
