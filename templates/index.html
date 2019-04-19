@@ -11,9 +11,9 @@
 </head>
 <body>
 	<div class="topnav" id="myTopnav">
-		<a target="_blank" href="{{host}}">Home</a>
-		<a target="_blank" href="{{ source_code }}">Source code</a>
-		<a target="_blank" href="{{ dev_info[0] }}">{{ dev_info[1] }}</a>
+		<a id="home" target="_blank" href="{{host}}"><img src="{{ url_for('static', filename='img/icon.png') }}" alt="Home"></a>
+		<a target="_blank" href="{{ source_code }}"><i class="fab fa-github"></i> Source code</a>
+		<a target="_blank" href="{{ dev_info[0] }}"><i class="fas fa-user"></i> {{ dev_info[1] }}</a>
 		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		    <i class="fa fa-bars"></i>
 		</a>
