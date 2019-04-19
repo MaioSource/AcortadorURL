@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="static/css/css.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   	<link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}">
   	<script type="text/javascript" src="static/js/script.js"></script>
 </head>
@@ -46,15 +46,19 @@
 		</form>
 	</div>
 	{% if yaUsado %}
-			<p class="if-elements" style="color: red">{{yaUsado}}</p>	
+			<div class="alert">
+			  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				<p class="if-elements">{{yaUsado}}</p>
+			</div>
     {% endif %}
   	{% if not urlCorto %}
   	{% else %}
 	  	<center>
 		  	<p></p>
-		    <div>
-		      	<p class="if-elements">Tu URL personalizada es: <a href= "{{urlCorto}}" target="_blank"> {{urlCorto}}</a></p>
-		    </div>
+		    <div class="alert-2">
+			  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				<p class="if-elements">Tu URL personalizada es: <a href= "{{urlCorto}}" target="_blank" style="color: white;"> {{urlCorto}}</a></p>
+			</div>
 	  	</center>
   	{% endif %}
 </body>
