@@ -77,7 +77,7 @@ html {
 }
 #URLCorto{
   display: block;
-  padding: 1px 1px 1px 161px;
+  padding: 1px 1px 1px 160px;
   width: 59%;
   background-color: white;
   border: 1px solid white;
@@ -248,36 +248,24 @@ html {
     font-size: 45px;
   }
   .alert {
-    position: absolute;
     padding: 50px;
-    background-color: #f44336;
-    color: white;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    text-align: center;
   }
 
   .alert-2 {
-    position: absolute;
     padding: 50px;
-    background-color: green;
-    color: white;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    text-align: center;
   }
 
   .closebtn {
     margin-left: 19px;
-    color: white;
-    font-weight: bold;
-    float: right;
     font-size: 45px;
     line-height: 60px;
-    cursor: pointer;
-    transition: 0.3s;
+  }
+  #home{
+    padding-left: 30px;
+    padding-top: 15px;
+  }
+  #home > img{
+    width: 70px;
   }
 }
 @media only screen and (max-width: 966px){
@@ -324,6 +312,26 @@ html {
       width: 60%;
       padding: 1px 1px 1px 233px;
     }
+  }
+  .if-elements{
+    font-size: 25px;
+  }
+  .alert {
+    padding: 10px;
+  }
+
+  .alert-2 {
+    padding: 10px;
+  }
+  .closebtn {
+    font-size: 35px;
+    line-height: 30px;
+  }
+  #home{
+    padding: 6px 5px 5px 5px;
+  }
+  #home > img{
+    width: 30px;
   }
 }
 @media only screen and (max-width: 670px){
