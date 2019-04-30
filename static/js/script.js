@@ -6,3 +6,7 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+function closeTopnav() {
+	var y = document.getElementById("myTopnav");
+	y.className = "topnav";
+}
