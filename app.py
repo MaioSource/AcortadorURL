@@ -55,4 +55,4 @@ def redireccionar(urlCorta):
 
 
 if __name__ == '__main__':
-        app.run(host='192.168.0.5')
+        app.run(app, host='0.0.0.0')
