@@ -8,6 +8,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 host="https://agustinmaio.cf/" 
+dev_info = ["https://github.com/MaioSource","Agustín Maio".decode('utf-8')]
+source_code = "https://github.com/MaioSource/AcortadorURL"
 app.secret_key=os.urandom(24)
 app.config.from_pyfile('config.cfg')
 
@@ -37,10 +39,10 @@ def home():
                         db.session.add(newUrl)
                         db.session.commit()
                 else:
-                        return render_template('index.html', host=host, yaUsado="URL personalizada ya se encuentra en uso.")
-                return render_template('index.html', host=host, urlCorto=url_personalizada)
+                        return render_template('index.html', host=host, dev_info=dev_info, yaUsado="URL personalizada ya se encuentra en uso.")
+                return render_template('index.html', host=host, urlCorto=url_personalizada, dev_info=dev_info, source_code=source_code)
 
-        return render_template('index.html', host=host)
+        return render_template('index.html', host=host, dev_info=dev_info, source_code=source_code)
 
 @app.route('/<urlCorta>', methods=['GET', 'POST'])
 def redireccionar(urlCorta):

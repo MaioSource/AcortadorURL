@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Acortador URL</title>
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
-  <link href="{{ url_for('static', filename='css/css.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet" type="text/css">
-  <link href="{{ url_for('static', filename='css/component.css') }}" rel="stylesheet" type="text/css"> 
+	<title>Acortador URL</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="static/css/css.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  	<link rel="shortcut icon" href="{{ url_for('static', filename='img/icon.png') }}">
+  	<script type="text/javascript" src="static/js/script.js"></script>
 </head>
-<body >
-<section class="rectangulo"><p class="titulo">Acortador de URL</p></section>
-     <form method="post" class="style-1" action="">
-     <div class="sAcortar">
-     <span>
-     <label>URL largo:</label><br>
-      <input type="text" name="URLLargo" id="URLLargo"> 
-      <p></p> <br>
-      <label>URL acortada:</label><br>
-      <label style="margin-left: -140px;" class="small">{{host}}</label>
-      <input type="text" name="URLCorto" id="URLCorto"> 
-      </span>    
-     </div>
-      <p></p>
-     <div>
-      <center><br><button class="btn btn-1 btn-1b boton" type="submit">Cortar</button></center>
-     </div>
-      </form>
-      {% if yaUsado %}
-        <p style="color: red">{{yaUsado}}</p>
-      {% endif %}
-  {% if not urlCorto %}
-  {% else %}
-  <center>
-  <p></p>
-    <div>
-      <label>Tu URL personalizada es: <a href= "{{urlCorto}}" target="_blank"> {{urlCorto}}</a></label>
-    </div>
-  </center>
-  {% endif %}
-  <footer class="pie"> 
-  <a href="https://www.github.com/maiosource/AcortadorURL" >https://www.github.com/maiosource/AcortadorURL</a>
-  <p></p>
-  <p></p>
-  </footer>
+<body>
+	<div class="topnav" id="myTopnav">
+		<a id="home" target="_blank" href="{{host}}"><img src="{{ url_for('static', filename='img/icon.png') }}" alt="Home"></a>
+		<a target="_blank" href="{{ source_code }}"><i class="fab fa-github"></i> Source code</a>
+		<a target="_blank" href="{{ dev_info[0] }}"><i class="fas fa-user"></i> {{ dev_info[1] }}</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		    <i class="fa fa-bars"></i>
+		</a>
+	</div>
+	<div id="content">
+		<form method="post" class="style-1" action="">
+			<div class="long-url">
+				<div class="content-long">
+					<label class="texto">URL largo:</label>
+					<br>
+					<input type="text" name="URLLargo" id="URLLargo" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" onclick="closeTopnav()">
+				</div>
+			</div>
+			<div class="short-url">
+				<div class="content-short">
+					<label class="texto">URL acortada:</label>
+					<br>
+					<div class="input-box">
+					    <span class="unit">{{host}}</span>
+					    <input type="text" name="URLCorto" id="URLCorto" autofocus="autofocus" placeholder="video" onclick="closeTopnav()">
+					</div>
+				</div>
+			</div>
+			<div>
+		      	<center>
+		      		<br>
+		      		<button class="button" type="submit">Cortar</button>
+		      	</center>
+		    </div>
+		</form>
+	</div>
+	{% if yaUsado %}
+			<div class="alert">
+			  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				<p class="if-elements">{{yaUsado}}</p>
+			</div>
+    {% endif %}
+  	{% if not urlCorto %}
+  	{% else %}
+	  	<center>
+		  	<p></p>
+		    <div class="alert-2">
+			  	<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+				<p class="if-elements">Tu URL personalizada es: <a href= "{{urlCorto}}" target="_blank" style="color: white;"> {{urlCorto}}</a></p>
+			</div>
+	  	</center>
+  	{% endif %}
 </body>
 </html>
