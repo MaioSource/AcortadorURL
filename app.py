@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 host="https://agustinmaio.cf/" 
-dev_info = ["https://github.com/MaioSource","Agustín Maio".decode('utf-8')]
+dev_info = ["https://github.com/MaioSource","Agustín Maio"]
 source_code = "https://github.com/MaioSource/AcortadorURL"
 app.secret_key=os.urandom(24)
 app.config.from_pyfile('config.cfg')
